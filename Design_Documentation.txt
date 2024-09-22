@@ -1,0 +1,47 @@
+Author:		Craig Truitt
+Class Section:	CS 5393-002 (Data Structures in C++)
+Collaborators:	None
+References:	Code Copilot - https://chatgpt.com/g/g-2DQzU5UZl-code-copilot/c/66eb6fd6-2bac-8012-ab58-af9113f4278a
+
+
+
+
+Stack:
+Objective -
+Implement a stack to check for balanced parentheses in an expression.
+
+Assumptions -
+I assumed that the expressions to check could be entered in by the TA. My decision to allow for user input was completely arbitrary.
+
+Approach -
+I decided to make a doubly linked list for the spine of my stack. By doing so, I ensured efficient (O(1)) push and pop methods, as I could store both the head and tail of my list, never needing to traverse from one side to the other via loops. This approach is also superior to the approach of an array or vector, as these would require extensive shifting of values within to enqueue or dequeue.
+In order to create the doubly linked list, I made a Node struct, which allowed me to conveniently group related values. The Node struct had 2 pointers to allow for double linking the list. Additionally, it stored only char values. I originally planned to make an enum to store the bracket types, but I determined it would be easier to just use characters, and I figured that no one would create such a long expression that there would be memory concerns.
+The doubly linked list was entirely created and managed by the stack class. Because this is a stack, node insertion and deletion were limited to the same end of the list.
+Additionally, to allow for speedy size retrieval, I added an integer called 'len'. This was increased each push and decreased each pop performed on a non-empty list.
+In the main method, I decided to allow the user to input the equation. This was completely arbitrary.
+
+
+
+Queue:
+Objective -
+Implement a queue with enqueue(int value), dequeue(), front(), isEmpty(), and size() methods.
+Create a prioritized instance of the queue, enqueue at least 5 elements, dequeue 2 elements based on priority, and show the current size of the queue.
+
+Assumptions -
+I made the assumption that the prioritization of the queue could be done in the main method rather than in a separate class, as the professor told us that queues were normally prioritized by arrays. This led to the need to add up separate queue sizes to find the size of the entire priority queue.
+
+Approach -
+I decided to make a doubly linked list for the spine of my queue. By doing so, I ensured efficient (O(1)) enqueue and dequeue methods, as I could store both the head and tail of my list, never needing to traverse from one side to the other via loops. This approach is also superior to the approach of an array or vector, as these would require extensive shifting of values within to enqueue or dequeue.
+In order to create the doubly linked list, I made a Node struct, which allowed me to conveniently group related values. The Node struct had 2 pointers to allow for double linking the list. Additionally, it stored only int values, as the queue's enqueue required an int as per assignment instructions. Otherwise, I would have templated the entire queue.
+The doubly linked list was entirely created and managed by the queue class, which was named Q for length. Because this is a queue, node addition was limited to the tail, and node removal was limited to the head.
+For the sake of efficiency (O(1) as opposed to O(n) for insertion), I added both a head and a tail to the Q class. Because the list was doubly linked, I never needed to traverse from the head to the tail.
+Additionally, to allow for speedy size retrieval, I added an integer called 'len'. This was increased each enqueue and decreased each dequeue performed on a non-empty list.
+In the main method, I decided to allow the user to input queue values and priorities. This was completely arbitrary, just like my decision to input 10 values. I was given complete freedom for both by the assignment details.
+
+
+
+
+Author:		Craig Truitt
+Class Section:	CS 5393-002 (Data Structures in C++)
+Collaborators:	None
+References:	Code Copilot - https://chatgpt.com/g/g-2DQzU5UZl-code-copilot/c/66eb6fd6-2bac-8012-ab58-af9113f4278a
